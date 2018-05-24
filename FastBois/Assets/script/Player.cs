@@ -70,8 +70,8 @@ public class Player : MonoBehaviour
         Sliding();
         Movement();
 
-        anim.SetBool("Sliding", Slideing);
-        anim.SetFloat("Speed", _velocityFloat);
+        //anim.SetBool("Sliding", Slideing);
+        //anim.SetFloat("Speed", _velocityFloat);
     }
 
     // FixedUpdate does the final calculations so it isn't frame depended.
