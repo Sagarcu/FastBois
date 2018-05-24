@@ -256,6 +256,7 @@
     <Compile Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
     <Compile Include="Assets\script\backupPlayer.cs" />
     <Compile Include="Assets\script\CameraLook.cs" />
+    <Compile Include="Assets\script\DeathZone.cs" />
     <Compile Include="Assets\script\LittlePlayer.cs" />
     <Compile Include="Assets\script\Player.cs" />
   </ItemGroup>
