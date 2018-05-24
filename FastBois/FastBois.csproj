@@ -259,6 +259,8 @@
     <Compile Include="Assets\script\DeathZone.cs" />
     <Compile Include="Assets\script\LittlePlayer.cs" />
     <Compile Include="Assets\script\Player.cs" />
+    <Compile Include="Assets\Timer.cs" />
+    <Compile Include="Assets\TriggerLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Shaders\BilateralBlur.shader" />
