@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public float maxSpeed = 100000000000f;
     public float groundDrag = 6f;
     public float airDrag = 1f;
+
+    public Animator anim;
+
     private Vector3 _movement;
     private Vector3 _jump;
     private Rigidbody _rb;
@@ -53,6 +56,7 @@ public class Player : MonoBehaviour
         _rb = gameObject.GetComponent<Rigidbody>();
         _cap = gameObject.GetComponent<CapsuleCollider>();
         _cam = gameObject.GetComponentInChildren<Camera>();
+        anim = gameObject.GetComponentsInChildren<Animator>()[0];
     }
 
     void Update()
@@ -65,6 +69,9 @@ public class Player : MonoBehaviour
         wallRunning();
         Sliding();
         Movement();
+
+        anim.SetBool("Sliding", Slideing);
+        anim.SetFloat("Speed", _velocityFloat);
     }
 
     // FixedUpdate does the final calculations so it isn't frame depended.
@@ -270,11 +277,13 @@ public class Player : MonoBehaviour
                 _cap.height = 0.5f;
                 _rb.velocity += _rb.velocity;
                 Slideing = true;
+                
             }
 
             if ((Input.GetKeyDown(KeyCode.LeftShift)) && _grounded && _velocityFloat < 2)
             {
                 Slideing = false;
+               // anim.SetBool("Sliding", false);
                 _crouching = true;
                 _cap.height = 0.5f;
                 groundDrag = 12;
@@ -283,6 +292,7 @@ public class Player : MonoBehaviour
             if ((Input.GetKeyUp(KeyCode.LeftShift)))
             {
                 Slideing = false;
+                //anim.SetBool("Sliding", false);
                 _crouching = false;
                 groundDrag = 6;
                 _cap.height = 2;
@@ -292,6 +302,7 @@ public class Player : MonoBehaviour
             {
                 _crouching = true;
                 Slideing = false;
+                //anim.SetBool("Sliding", false);
             }
 
             if (_crouching == true)
