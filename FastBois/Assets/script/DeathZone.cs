@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DeathZone : MonoBehaviour
@@ -21,7 +22,9 @@ public class DeathZone : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-
+            int scene = SceneManager.GetActiveScene().buildIndex;
+            Debug.Log(scene);
+            SceneManager.LoadScene(scene);
         }
 
     }
