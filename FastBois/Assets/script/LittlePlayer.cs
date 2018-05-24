@@ -26,6 +26,7 @@ public class LittlePlayer : MonoBehaviour
     private Vector3 _slideVec;
     private float _curSlideDistance;
     private bool Slideing;
+    private bool _crouching;
 
     [Header("WallRun Properties")]
     public bool _wallRun = false;
@@ -60,12 +61,10 @@ public class LittlePlayer : MonoBehaviour
         GroundedCheck();
         wallsCheck();
 
-        Movement();
         Jumping();
         wallRunning();
         Sliding();
-
-        Debug.Log(_velocityFloat);
+        Movement();
     }
 
     // FixedUpdate does the final calculations so it isn't frame depended.
@@ -96,7 +95,6 @@ public class LittlePlayer : MonoBehaviour
                 if (_movement.x > 0)
                 {
                     _movement.x = 0;
-                    Debug.Log("jaih");
                 }
             }
 
@@ -105,6 +103,22 @@ public class LittlePlayer : MonoBehaviour
                 if (_movement.x < 0)
                 {
                     _movement.x = 0;
+                }
+            }
+
+            if (isWallF)
+            {
+                if (_movement.z > 0)
+                {
+                    _movement.z = 0;
+                }
+            }
+
+            if (isWallB)
+            {
+                if (_movement.z < 0)
+                {
+                    _movement.z = 0;
                 }
             }
         }
@@ -199,6 +213,9 @@ public class LittlePlayer : MonoBehaviour
             }
             else
             {
+                _rb.useGravity = true;
+                _wallRun = false;
+
                 if ((Input.GetButtonDown("Jump")))
                 {
                     WallJump();
@@ -247,32 +264,39 @@ public class LittlePlayer : MonoBehaviour
     {
         if (_wallRun != true)
         {
-            if ((Input.GetKeyDown(KeyCode.LeftShift)) && _grounded)
+            if ((Input.GetKeyDown(KeyCode.LeftShift)) && _grounded && _velocityFloat > 2)
             {
                 groundDrag = 0;
                 _cap.height = 0.5f;
                 _rb.velocity += _rb.velocity;
                 Slideing = true;
             }
+
+            if ((Input.GetKeyDown(KeyCode.LeftShift)) && _grounded && _velocityFloat < 2)
+            {
+                Slideing = false;
+                _crouching = true;
+                _cap.height = 0.5f;
+                groundDrag = 12;
+            }
+
             if ((Input.GetKeyUp(KeyCode.LeftShift)))
             {
                 Slideing = false;
+                _crouching = false;
                 groundDrag = 6;
                 _cap.height = 2;
             }
 
-            if (Slideing)
+            if (Slideing == true && _velocityFloat < 2)
             {
-
-            }
-            else
-            {
-
-            }
-            if (_curSlideDistance >= MaxSlideDistance)
-            {
+                 _crouching = true;
                 Slideing = false;
-                _curSlideDistance = 0;
+            }
+
+            if (_crouching == true)
+            {
+                groundDrag = 12;
             }
         }
     }
@@ -390,18 +414,19 @@ public class LittlePlayer : MonoBehaviour
 
         else if (Physics.Raycast(transform.position, transform.forward, out hitF, 1))
         {
-            if (hitF.transform.tag == "Wall" || hitF.transform.tag == "Floor")
+            if (hitF.transform.tag == "Wall")
             {
                 isWallR = false;
                 isWallL = false;
                 isWallF = true;
                 isWallB = false;
+                Debug.Log("hoeren");
             }
         }
 
         else if (Physics.Raycast(transform.position, -transform.forward, out hitB, 1))
         {
-            if (hitB.transform.tag == "Wall" || hitB.transform.tag == "Floor")
+            if (hitB.transform.tag == "Wall")
             {
                 isWallR = false;
                 isWallL = false;
