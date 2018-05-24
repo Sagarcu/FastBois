@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 107974263}
   m_Layer: 0
   m_Name: Wall (97)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 112039208}
   m_Layer: 0
   m_Name: Wall (96)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3100,7 +3100,7 @@ GameObject:
   - component: {fileID: 333215802}
   m_Layer: 0
   m_Name: Wall (89)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4865,7 +4865,7 @@ GameObject:
   - component: {fileID: 560239768}
   m_Layer: 0
   m_Name: Wall (87)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6380,7 +6380,7 @@ GameObject:
   - component: {fileID: 710642066}
   m_Layer: 0
   m_Name: Wall (94)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7053,7 +7053,7 @@ GameObject:
   - component: {fileID: 786961037}
   m_Layer: 0
   m_Name: Wall (90)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7389,7 +7389,7 @@ GameObject:
   - component: {fileID: 835009716}
   m_Layer: 0
   m_Name: Wall (88)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9387,7 +9387,7 @@ GameObject:
   - component: {fileID: 1033538476}
   m_Layer: 0
   m_Name: Wall (85)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10818,7 +10818,7 @@ GameObject:
   - component: {fileID: 1258064900}
   m_Layer: 0
   m_Name: Wall (121)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11658,7 +11658,7 @@ GameObject:
   - component: {fileID: 1333175933}
   m_Layer: 0
   m_Name: Wall (86)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11742,7 +11742,7 @@ GameObject:
   - component: {fileID: 1334095786}
   m_Layer: 0
   m_Name: Wall (122)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12162,7 +12162,7 @@ GameObject:
   - component: {fileID: 1354606218}
   m_Layer: 0
   m_Name: Wall (93)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13170,7 +13170,7 @@ GameObject:
   - component: {fileID: 1485375237}
   m_Layer: 0
   m_Name: Wall (91)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16722,6 +16722,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1947183501}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1949325123 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1004311866955544, guid: fc5ecaffbc68ffd4b8f7bf2e479c6155,
+    type: 2}
+  m_PrefabInternal: {fileID: 2145262480}
+--- !u!114 &1949325124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1949325123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d24e8613203a0a43825f2edc3f0233e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 100
+  maxSpeed: 1e+11
+  groundDrag: 6
+  airDrag: 1
+  JumpForce: 25
+  SlideForce: 100
+  MaxSlideDistance: 120
+  _wallRun: 0
+  wallrunAcceleration: 150
+  rotationSpeed: 4
+  targetAngle: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1954651214
 GameObject:
   m_ObjectHideFlags: 0
@@ -17743,7 +17770,7 @@ GameObject:
   - component: {fileID: 2135662052}
   m_Layer: 0
   m_Name: Wall (128)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17827,7 +17854,7 @@ GameObject:
   - component: {fileID: 2140386674}
   m_Layer: 0
   m_Name: Wall (95)
-  m_TagString: Wall
+  m_TagString: Slope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17915,7 +17942,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4496809492662628, guid: fc5ecaffbc68ffd4b8f7bf2e479c6155, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.312
       objectReference: {fileID: 0}
     - target: {fileID: 4496809492662628, guid: fc5ecaffbc68ffd4b8f7bf2e479c6155, type: 2}
       propertyPath: m_LocalRotation.x
@@ -17950,6 +17977,11 @@ Prefab:
         type: 2}
       propertyPath: JumpForce
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129289469670788, guid: fc5ecaffbc68ffd4b8f7bf2e479c6155,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc5ecaffbc68ffd4b8f7bf2e479c6155, type: 2}
