@@ -65,8 +65,6 @@ public class Player : MonoBehaviour
         wallRunning();
         Sliding();
         Movement();
-
-        Debug.Log(_velocityFloat);
     }
 
     // FixedUpdate does the final calculations so it isn't frame depended.
@@ -154,7 +152,7 @@ public class Player : MonoBehaviour
 
     private void wallRunning()
     {
-        if (!_grounded)
+        if (!_grounded && !Slideing)
         {
             if (_velocityFloat > 2.0f)
             {
