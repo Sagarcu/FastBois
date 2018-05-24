@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: fd8ada52706ceb14aa4ca34535d0e9e1
-timeCreated: 1527169608
-licenseType: Free
 SubstanceImporter:
   externalObjects: {}
   serializedVersion: 5
@@ -87,11 +85,7 @@ SubstanceImporter:
       - _UVSec: 0
       - _ZWrite: 1
       colors:
-<<<<<<< HEAD
       - _Color: {r: 0.3455882, g: 0.33542386, b: 0.33542386, a: 1}
-=======
-      - _Color: {r: 1, g: 1, b: 1, a: 1}
->>>>>>> 2a9624fb2dea2600625ff9eb7797f1ed15c46b20
       - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
     - name: Brick_basecolor
