@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private Vector3 _slideVec;
     private float _curSlideDistance;
     private bool Slideing;
+    private bool _crouchen;
 
     [Header("WallRun Properties")]
     public bool _wallRun = false;
@@ -72,7 +73,8 @@ public class Player : MonoBehaviour
         wallRunning();
         Sliding();
 
-        Debug.Log(_velocityFloat);
+        Debug.Log("sliding is " + Slideing);
+        Debug.Log("crouching is " + _crouchen);
     }
 
     void FixedUpdate()
@@ -232,32 +234,31 @@ public class Player : MonoBehaviour
     {
         if (_wallRun != true)
         {
-            if ((Input.GetKeyDown(KeyCode.LeftShift)) && _grounded)
+            if(_velocityFloat < 2)
+            {
+                Slideing = false;
+                groundDrag = 6;
+            }
+            if ((Input.GetKeyDown(KeyCode.LeftShift)) && _grounded && _velocityFloat > 2)
             {
                 groundDrag = 0;
                 _cap.height = 0.5f;
                 _rb.velocity += _rb.velocity;
                 Slideing = true;
+                _crouchen = false;
             }
+            if ((Input.GetKeyDown(KeyCode.LeftShift)) && _grounded && _velocityFloat < 2)
+            {
+                Slideing = false;
+                _cap.height = 0.5f;
+                groundDrag = 6;
+            }
+
             if ((Input.GetKeyUp(KeyCode.LeftShift)))
             {
                 Slideing = false;
                 groundDrag = 6;
                 _cap.height = 2;
-            }
-
-            if (Slideing)
-            {
-
-            }
-            else
-            {
-
-            }
-            if (_curSlideDistance >= MaxSlideDistance)
-            {
-                Slideing = false;
-                _curSlideDistance = 0;
             }
         }
     }
