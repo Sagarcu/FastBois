@@ -8,6 +8,9 @@ public class TriggerLevel : MonoBehaviour {
     public int levelToLoad;
     LevelChanger levelChanger;
 
+    public Timer timer;
+    private bool Running;
+
     private void Awake()
     {
         levelChanger = GameObject.Find("FadeTo_Level").GetComponent<LevelChanger>();
@@ -15,6 +18,8 @@ public class TriggerLevel : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
+        GameObject Timer = GameObject.FindGameObjectWithTag("Timer");
+        timer.Running = false;
         levelChanger.FadeToLevel(levelToLoad);
     }
 

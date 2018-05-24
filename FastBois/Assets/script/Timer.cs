@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour {
     private float timer;
+    public bool Running;
     public float Seconds;
 	// Use this for initialization
 	void Start () {
         timer = 0;
+        Running = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        timer += Time.deltaTime;
-        Seconds = Mathf.RoundToInt(timer % 60);
+        if (Running)
+        {
+            timer += Time.deltaTime;
+        }
+        Seconds = (timer % 60);
     }
 }
