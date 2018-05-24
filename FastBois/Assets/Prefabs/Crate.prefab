@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65273633680977208}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638425980099522}
-  m_Mesh: {fileID: 4300000, guid: 3cd9e584ca0cef14b9162f3f7f5d93d9, type: 3}
+  m_Mesh: {fileID: 4300000, guid: a6c79031cefd5ed4dab83795e1175869, type: 3}
 --- !u!65 &65273633680977208
 BoxCollider:
   m_ObjectHideFlags: 1
