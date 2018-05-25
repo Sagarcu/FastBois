@@ -18,6 +18,7 @@ public class TriggerLevel : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
+        timer.GetComponent<Timer>().Finished = true;
         GameObject Timer = GameObject.FindGameObjectWithTag("Timer");
         timer.Running = false;
         levelChanger.FadeToLevel(levelToLoad);

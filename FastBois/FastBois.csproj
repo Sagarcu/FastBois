@@ -259,10 +259,6 @@
     <Compile Include="Assets\Main Menu\Setting\GameSettings.cs" />
     <Compile Include="Assets\Main Menu\Setting\MainMenuSetting.cs" />
     <Compile Include="Assets\Main Menu\Setting\SettingManager.cs" />
-    <Compile Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Scripts\VolumetricLight.cs" />
-    <Compile Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Scripts\VolumetricLightRenderer.cs" />
-    <Compile Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
-    <Compile Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
     <Compile Include="Assets\PauseMenu\PauseMenu.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
@@ -319,11 +315,6 @@
     <Compile Include="Assets\script\TriggerLevel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Shaders\BilateralBlur.shader" />
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Shaders\BlitAdd.shader" />
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Shaders\VolumetricLight.shader" />
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />

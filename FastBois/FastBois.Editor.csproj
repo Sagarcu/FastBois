@@ -292,7 +292,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Editor\ImageEffects\TonemappingEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
@@ -329,11 +328,6 @@
     <Compile Include="Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Shaders\BilateralBlur.shader" />
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Shaders\BlitAdd.shader" />
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Shaders\VolumetricLight.shader" />
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\Assets\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
-    <None Include="Assets\Main Menu\VolumetricLights-master\VolumetricLights-master\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />

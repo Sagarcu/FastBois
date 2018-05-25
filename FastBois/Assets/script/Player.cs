@@ -10,7 +10,8 @@ public class Player : MonoBehaviour
     public float groundDrag = 6f;
     public float airDrag = 1f;
 
-    public Animator anim;
+    private Animator anim;
+    private float idleTime = 0.0f;
 
     private Vector3 _movement;
     private Vector3 _jump;
@@ -61,6 +62,8 @@ public class Player : MonoBehaviour
         _cap = gameObject.GetComponent<CapsuleCollider>();
         _cam = gameObject.GetComponentInChildren<Camera>();
         anim = gameObject.GetComponentsInChildren<Animator>()[0];
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -74,8 +77,38 @@ public class Player : MonoBehaviour
         Sliding();
         Movement();
 
-        //anim.SetBool("Sliding", Slideing);
-        //anim.SetFloat("Speed", _velocityFloat);
+       anim.SetBool("Sliding", Slideing);
+       anim.SetFloat("Speed", _velocityFloat);
+       anim.SetBool("Grounded", _grounded);
+
+        if (_velocityFloat < 1)
+        {
+            idleTime += 0.1f;
+            anim.SetFloat("WaitTime", idleTime);
+
+            if (idleTime > 30)
+            {
+                idleTime = 0;
+            }
+        }
+
+        if (_wallRun && isWallL)
+        {
+            anim.SetBool("WallRunLeft", true);
+        }
+        else
+        {
+            anim.SetBool("WallRunLeft", false);
+        }
+        if (_wallRun && isWallR)
+        {
+            anim.SetBool("WallRunRight", true);
+        }
+        else
+        {
+            anim.SetBool("WallRunRight", false);
+        }
+
     }
 
     // FixedUpdate does the final calculations so it isn't frame depended.
@@ -305,7 +338,6 @@ public class Player : MonoBehaviour
             if ((Input.GetKeyDown(KeyCode.LeftShift)) && _grounded && _velocityFloat < 2)
             {
                 Slideing = false;
-               // anim.SetBool("Sliding", false);
                 _crouching = true;
                 _cap.height = 0.5f;
                 groundDrag = 12;
@@ -314,7 +346,6 @@ public class Player : MonoBehaviour
             if ((Input.GetKeyUp(KeyCode.LeftShift)))
             {
                 Slideing = false;
-                //anim.SetBool("Sliding", false);
                 _crouching = false;
                 Crouching.mute = true;
                 groundDrag = 6;
@@ -325,7 +356,6 @@ public class Player : MonoBehaviour
             {
                 _crouching = true;
                 Slideing = false;
-                //anim.SetBool("Sliding", false);
             }
 
             if (_crouching == true)
