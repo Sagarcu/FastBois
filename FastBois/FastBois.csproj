@@ -315,6 +315,7 @@
     <Compile Include="Assets\script\LittlePlayer.cs" />
     <Compile Include="Assets\script\Player.cs" />
     <Compile Include="Assets\script\Timer.cs" />
+    <Compile Include="Assets\script\ToolTips.cs" />
     <Compile Include="Assets\script\TriggerLevel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour {
     private float timer;
     public bool Running;
     public float Seconds;
+    public float Minutes;
     private double _roundedSeconds;
     public Text timerText;
 
@@ -23,9 +24,25 @@ public class Timer : MonoBehaviour {
             timer += Time.deltaTime;
         }
         Seconds = (timer % 60);
-        _roundedSeconds = System.Math.Round(Seconds, 3);
 
-        timerText.text = ("Time: " + _roundedSeconds);
+        Minutes = Mathf.Floor(timer / 60);
+        if (Minutes == 0)
+        {
+            _roundedSeconds = System.Math.Round(Seconds, 3);
+        }
+        else
+        {
+            _roundedSeconds = System.Math.Round(Seconds);
+        }
+
+        if (Minutes == 0)
+        {
+            timerText.text = ("It only took you " + _roundedSeconds + " Seconds!");
+        }
+        else
+        {
+            timerText.text = ("You finished the level in " + Minutes + " minutes and " + _roundedSeconds + " Seconds!");
+        }
     }
 
 }

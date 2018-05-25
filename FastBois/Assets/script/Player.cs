@@ -45,6 +45,10 @@ public class Player : MonoBehaviour
     private RaycastHit hitF;
     private RaycastHit hitB;
 
+    public AudioSource running;
+    public AudioSource jumping;
+    public AudioSource Crouching;
+
     [Header("Sickest Lerps")]
     public float rotationSpeed = 4.0f;
     public Quaternion targetAngle;
@@ -134,16 +138,32 @@ public class Player : MonoBehaviour
         {
             _movement = transform.rotation * (_movement * acceleration);
             _rb.drag = groundDrag;
+            running.mute = false;
+
+            if (_crouching)
+            {
+                running.mute = true;
+                Crouching.mute = false;
+            }
+
         }
         else if (_wallRun)
         {
             _movement = transform.rotation * (_movement * wallrunAcceleration);
             _rb.drag = groundDrag;
+            running.mute = false;
         }
         else
         {
             _movement = transform.rotation * (_movement * (acceleration * 0.1f));
             _rb.drag = airDrag;
+            running.mute = true;
+        }
+
+        if (_velocityFloat < 1)
+        {
+            running.mute = true;
+            Crouching.mute = true;
         }
 
     }
@@ -152,6 +172,7 @@ public class Player : MonoBehaviour
     {
         if ((Input.GetButtonDown("Jump")) && _grounded)
         {
+            jumping.Play();
             _rb.AddForce((Vector3.up * JumpForce) + (_rb.velocity), ForceMode.Impulse);
 
         }
@@ -234,6 +255,7 @@ public class Player : MonoBehaviour
 
     private void WallJump()
     {
+        jumping.Play();
         _wallRunTimer = 1.5f;
         if (isWallR)
         {
@@ -294,6 +316,7 @@ public class Player : MonoBehaviour
                 Slideing = false;
                 //anim.SetBool("Sliding", false);
                 _crouching = false;
+                Crouching.mute = true;
                 groundDrag = 6;
                 _cap.height = 2;
             }
