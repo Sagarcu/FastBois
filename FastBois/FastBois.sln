@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastBois", "FastBois.csproj", "{C4609707-FF4E-7972-ED80-51BB68FF89F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastBois.Plugins", "FastBois.Plugins.csproj", "{6ECBF257-FA24-1716-1F4C-B5B1E09F6067}"
